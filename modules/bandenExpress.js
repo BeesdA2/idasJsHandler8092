@@ -2,7 +2,7 @@ const { handleConsumeWebservice } = require("../../../BandenExpress/js/consumeWe
 const { handleConsumeWebserviceApiWeb } = require("../../../BandenExpress/js/consumeWebserviceApiWeb.js");
 
 async function consumeApiWeb  (req, res)  {
- //console.log('consumeApiWeb');
+  
  
  
   let setletter = req.query.setletter;
@@ -10,7 +10,11 @@ async function consumeApiWeb  (req, res)  {
   let applicatie = req.query.applicatie;
   let filiaal    = req.query.filiaal;
   
-  
+  var d = new Date();
+  var datetime = d.toLocaleString(); 
+   
+  console.log(datetime + ' consumeBandenExpressApiWeb setletter:' +setletter + ' guid: ' + guid +' applicatie: ' + applicatie );
+    
    
  // res.send('Mollie wordt uitgevoerd ; setletter: ' +setletter + ' filiaal: '+ filiaal+ ' ordernr: '+ ordernr);
   var resolve =  await handleConsumeWebservice(setletter,  guid, applicatie);
@@ -21,7 +25,7 @@ async function consumeApiWeb  (req, res)  {
 };
 
 async function consumeWebserviceApiWeb  (req, res)  {
- //console.log('consumeWebserviceApiWeb');
+ 
  
  
   let setletter = req.query.setletter;
@@ -29,7 +33,11 @@ async function consumeWebserviceApiWeb  (req, res)  {
   let applicatie = req.query.applicatie;
   let filiaal    = req.query.filiaal;
    
-   
+  var d = new Date();
+  var datetime = d.toLocaleString(); 	
+  console.log(datetime + ' consumeBandenExpressWebserviceApiWeb setletter: ' +setletter + ' guid: ' + guid +' applicatie: ' + applicatie );
+    
+
  // res.send('Mollie wordt uitgevoerd ; setletter: ' +setletter + ' filiaal: '+ filiaal+ ' ordernr: '+ ordernr);
   var responseWebservice =  await handleConsumeWebserviceApiWeb(setletter, filiaal, guid, applicatie);
   let resolve = await responseWebservice; 

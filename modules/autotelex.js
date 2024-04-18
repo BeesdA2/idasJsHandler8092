@@ -4,7 +4,7 @@ const { handleOpvragenAutotelexpro } = require("../../../../Productie/AutotelexP
 const { handleKentekenRaadpleging} = require("../../../../Productie/AutotelexPRO/js/KentekenRaadpleging.js");
 
 async function consumeVehicleAutotelexpro  (req, res)  {
- console.log('consumeVehicleAutotelexpro');
+ 
  
  
   let setletter = req.query.setletter;
@@ -18,6 +18,9 @@ async function consumeVehicleAutotelexpro  (req, res)  {
   let inruil     = req.query.inruil;
    
   
+  var d = new Date();
+  var datetime = d.toLocaleString(); 	
+  console.log(datetime +' consumeVehicleAutotelexpro: ' + ' setletter: ' +setletter + ' idasuser: ' + idasuser + ' applicatie: ' +applicatie + ' filiaal: ' +filiaal+ ' offerte: '+ offerte  + ' kenteken: ' + kenteken + ' taxatie-id: ' +taxid + ' taxatie datum: ' + taxdatum + ' inruil: ' + inruil  );
   
                       
   
@@ -31,7 +34,7 @@ async function consumeVehicleAutotelexpro  (req, res)  {
 };
 
 async function consumeAanvraagAutotelexpro  (req, res)  {
- console.log('consumeAanvraagAutotelexpro');
+ 
  
  
   let setletter  = req.query.setletter;
@@ -44,7 +47,10 @@ async function consumeAanvraagAutotelexpro  (req, res)  {
   let klnr       = req.query.klnr;
    
   
-                      
+  var d = new Date();
+  var datetime = d.toLocaleString(); 	
+  console.log(datetime +' consumeAanvraagAutotelexpro: ' + ' setletter: ' +setletter + ' idasuser: ' + idasuser + ' applicatie: ' +applicatie + ' filiaal: ' +filiaal+ ' offerte: '+ offerte  + ' kenteken: ' + kenteken + ' km stand: ' +kmstand + ' klantnummer: ' + klantnummer );
+                   
   
    
  // res.send('Mollie wordt uitgevoerd ; setletter: ' +setletter + ' filiaal: '+ filiaal+ ' ordernr: '+ ordernr);
@@ -58,7 +64,7 @@ async function consumeAanvraagAutotelexpro  (req, res)  {
 
 
 async function consumeOpvragenAutotelexpro  (req, res)  {
- console.log('consumeOpvragenAutotelexpro');
+ 
  
  
   let setletter  = req.query.setletter;
@@ -70,7 +76,10 @@ async function consumeOpvragenAutotelexpro  (req, res)  {
   let logging    = req.query.logging;  
    
   
-                        
+  var d = new Date();
+  var datetime = d.toLocaleString(); 	
+  console.log(datetime +' onsumeOpvragenAutotelexpro: ' + ' setletter: ' +setletter + ' idasuser: ' + idasuser + ' applicatie: ' +applicatie + ' filiaal: ' +filiaal+ ' offerte: '+ offerte  + ' ticket-id: ' + ticketid + ' logging: ' +logging );
+                       
    
  // res.send('Mollie wordt uitgevoerd ; setletter: ' +setletter + ' filiaal: '+ filiaal+ ' ordernr: '+ ordernr);
   var resolve =  await handleOpvragenAutotelexpro(setletter, idasuser, applicatie, filiaal, offerte, ticketid, logging);
@@ -81,7 +90,7 @@ async function consumeOpvragenAutotelexpro  (req, res)  {
 };
 
 async function consumeKentekenRaadpleging  (req, res)  {
- console.log('consumeKentekenRaadpleging');
+  
  
  
   let setletter  = req.query.setletter;
@@ -93,6 +102,9 @@ async function consumeKentekenRaadpleging  (req, res)  {
   let logging    = req.query.logging;  
    
   
+  var d = new Date();
+ var datetime = d.toLocaleString(); 	
+ console.log(datetime +' consumeKentekenRaadpleging: ' + ' setletter: ' +setletter + ' idasuser: ' + idasuser + ' applicatie: ' +applicatie + ' filiaal: ' +filiaal+ ' offerte: '+ offerte  + ' ticket-id: ' + ticketid + ' logging: ' +logging );
                         
    
  // res.send('Mollie wordt uitgevoerd ; setletter: ' +setletter + ' filiaal: '+ filiaal+ ' ordernr: '+ ordernr);

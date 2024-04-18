@@ -12,7 +12,11 @@ async function consumeiDASPDF  (req, res)  {
    
   
   
-    
+ var d = new Date();
+ var datetime = d.toLocaleString(); 	
+ console.log(datetime + ' consumeIdasPDF setletter: ' +setletter + ' pdfGUID: ' + pdfGUID );
+ 
+  
 
 
 
