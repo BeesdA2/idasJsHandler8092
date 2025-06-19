@@ -1,4 +1,4 @@
-const { downloadLaatsteBestandLoyaltyProfs } = require("../../../../Productie/loyaltyProfsSFTP/js/consumeLoyaltyProfsSFTP.js");
+const { downloadLaatsteBestandLoyaltyProfs } = require("../../../../Productie/loyaltyProfs/js/consumeLoyaltyProfsSFTP.js");
 
 
  
